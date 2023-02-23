@@ -18,8 +18,9 @@ import java.util.Set;
 
 public class EntityParser {
     private static final Set<Class<?>> VALID_FIELDS = ImmutableSet.of(
-            String.class, Byte.class, Float.class,
-            Double.class, Long.class, Integer.class);
+            String.class, byte.class, Byte.class, float.class, Float.class,
+            short.class, Short.class, double.class, Double.class,
+            long.class, Long.class, int.class, Integer.class);
 
     private static final Set<Class<?>> VALID_LINKED_FIELDS = ImmutableSet.of(Set.class, List.class);
     public static <T> WrappedEntity<T> parse(Class<T> clazz) throws ReflexionException {

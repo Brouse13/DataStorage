@@ -11,11 +11,18 @@ import java.util.stream.Stream;
 public class MySQLHelper {
     private static final Map<Class<?>, String> CONVERTED_TYPES = Stream.of(
             new AbstractMap.SimpleEntry<>(String.class, "VARCHAR(%d)"),
-            new AbstractMap.SimpleEntry<>(Byte.class, "TYNYINT(%d)"),
-            new AbstractMap.SimpleEntry<>(Double.class, "SMALLINT(%d)"),
+            new AbstractMap.SimpleEntry<>(Byte.class, "TINYINT(%d)"),
+            new AbstractMap.SimpleEntry<>(Short.class, "SMALLINT(%d)"),
+            new AbstractMap.SimpleEntry<>(Double.class, "DOUBLE"),
             new AbstractMap.SimpleEntry<>(Integer.class, "INT(%d)"),
             new AbstractMap.SimpleEntry<>(Float.class, "FLOAT(%d)"),
-            new AbstractMap.SimpleEntry<>(Long.class, "BIGINT(%d)")
+            new AbstractMap.SimpleEntry<>(Long.class, "BIGINT(%d)"),
+            new AbstractMap.SimpleEntry<>(byte.class, "TINYINT(%d)"),
+            new AbstractMap.SimpleEntry<>(double.class, "DOUBLE"),
+            new AbstractMap.SimpleEntry<>(short.class, "SMALLINT(%d)"),
+            new AbstractMap.SimpleEntry<>(int.class, "INT(%d)"),
+            new AbstractMap.SimpleEntry<>(float.class, "FLOAT(%d)"),
+            new AbstractMap.SimpleEntry<>(long.class, "BIGINT(%d)")
     ).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
     /**
